@@ -6,7 +6,6 @@ on:
 jobs:
   docs-tag:
     name: Tag PR with documentation
-    permissions: write-all
     if: ${{ github.event_name == 'pull_request' }}
     runs-on: ubuntu-latest
     steps:
@@ -15,3 +14,5 @@ jobs:
     - name: Tag PR with documentation
       run: |
         gh pr edit ${{ github.event.pull_request.number }} --add-label documentation
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
