@@ -1,7 +1,7 @@
-name: Validate Docs PR comments
+name: Tag Docs PRs
 on:
-  issue_comment:
-    types: [created]
+  pull_request:
+    types: [opened]
     paths:
       - docs/developer-docs/
     
